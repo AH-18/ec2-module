@@ -94,3 +94,9 @@ variable "tags" {
   type        = map(string)
   default     = {}
 }
+
+variable "user_data" {
+  description = "User data script to run on instance launch. If provided, will be base64 encoded automatically."
+  type        = string
+  default     = ""
+}

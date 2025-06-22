@@ -24,6 +24,9 @@ resource "aws_instance" "this" {
   associate_public_ip_address = var.associate_public_ip_address
   subnet_id                   = var.subnet_id
 
+  # User Data Script
+  user_data = var.user_data != "" ? base64encode(var.user_data) : null
+
   # Storage
   root_block_device {
     volume_size           = var.root_block_device.size
